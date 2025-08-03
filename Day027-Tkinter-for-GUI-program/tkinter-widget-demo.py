@@ -8,26 +8,6 @@ window.minsize(600, 400)
 my_label = Label(text="My Label", font=("Arial", 20, "bold"))
 my_label.pack()
 
-# #update label text
-# #either
-# my_label["text"] = "New Text1"
-# #or
-# my_label.config(text="New Text2")
-
-# BUTTONS
-
-def button_clicked():
-    """Updates my_label with new value"""
-    new_text = inputs.get()
-    my_label["text"] = new_text
-
-button = Button(text="Click Me", command=button_clicked)
-button.pack()
-
-#ENTRY
-inputs = Entry(width=20)
-inputs.pack()
-
 #entries
 entry = Entry(width=30)
 entry.insert(END, "Enter your value")
@@ -94,29 +74,5 @@ for fruit in fruits:
 listbox.bind("<<ListboxSelect>>", listbox_used)
 listbox.pack()
 
-
 #last of the code
 window.mainloop()
-
-
-# import tkinter as tk
-#
-# root = tk.Tk()
-# root.title("Canvas Example")
-#
-# canvas = tk.Canvas(root, width=400, height=300, bg='white')
-# canvas.pack()
-#
-# # Draw a rectangle
-# canvas.create_rectangle(50, 50, 150, 150, fill='blue')
-#
-# # Draw a circle (oval)
-# canvas.create_oval(200, 50, 300, 150, fill='green')
-#
-# # Draw a line
-# canvas.create_line(0, 0, 400, 300, fill='red', width=3)
-#
-# # Add text
-# canvas.create_text(200, 200, text="Hello, Canvas!", font=("Arial", 16), fill='purple')
-#
-# root.mainloop()
