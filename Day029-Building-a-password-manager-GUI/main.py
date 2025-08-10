@@ -11,6 +11,7 @@ window = Tk()
 
 window.title("Password Manager")
 window.config(bg="white", padx=30, pady=30)
+window.grid_rowconfigure(3, minsize=40)
 
 #canvas setup
 canvas = Canvas(width=200, height=200, highlightthickness=0)
@@ -22,9 +23,9 @@ canvas.grid(column=1, row=0)
 #Labels
 web_label = Label(text="Website:", bg="white", font=FONT_NAME, padx=10, pady=10)
 web_label.grid(column=0, row=1)
-email_label = Label(text="Email/Username:", bg="white", font=(FONT_NAME, 12))
+email_label = Label(text="Email/Username:", bg="white", font=FONT_NAME)
 email_label.grid(column=0, row=2)
-password_label = Label(text="Password:", bg="white", font=(FONT_NAME, 12))
+password_label = Label(text="Password:", bg="white", font=FONT_NAME)
 password_label.grid(column=0, row=3)
 
 #entries
@@ -36,9 +37,9 @@ password_entry = Entry(width=34)
 password_entry.grid(column=1, row=3)
 
 #buttons
-generate_btn = Button(text="Generate Password", font=(FONT_NAME, 12))
+generate_btn = Button(text="Generate Password", font=FONT_NAME, bg="white", )
 generate_btn.grid(column=2, row=3)
-add_btn = Button(text="Add", font=FONT_NAME, width=39)
+add_btn = Button(text="Add", font=FONT_NAME, width=39, bg="white")
 add_btn.grid(column=1, row=4, columnspan=2)
 
 window.mainloop()
