@@ -1,5 +1,6 @@
 from tkinter import *
 import math
+import pygame
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -12,6 +13,14 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 15
 reps = 0
 timer = None
+
+# ---------------------------- SOUND SETUP ------------------------------ #
+pygame.mixer.init()
+
+def play_audio(file):
+    pygame.mixer.music.load(file)
+    pygame.mixer.music.play()
+
 # ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
     """resets timer and other variables"""
@@ -32,14 +41,15 @@ def start_timer():
     if reps % 8 == 0:
         count_down(long_break_sec)
         timer_label.config(text="Break", fg=RED)
-        timer_label["fg"] = RED
+        play_audio("long_break.wav")
     elif reps % 2 == 0:
         count_down(short_break_sec)
         timer_label.config(text="Break", fg=PINK)
-        timer_label["fg"] = PINK
+        play_audio("short_break.wav")
     else:
         count_down(work_sec)
         timer_label.config(text="Work")
+        play_audio("work_start.wav")
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
