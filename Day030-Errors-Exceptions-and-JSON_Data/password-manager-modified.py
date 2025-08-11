@@ -41,28 +41,6 @@ def save_data():
 
     if len(website) == 0 or len(email) < 16 or len(password) == 0:
         messagebox.showinfo(title="Oops", message="Please don't leave any fields empty.")
-# else:
-#
-#     # write to Json file
-#     with open("data.json", "w") as file1:
-#         json.dump(new_data, file1, indent=4)
-#
-#     # read from json file
-#     with open("data.json", "r") as file2:
-#         data = json.load(file2)
-#         print(data)
-    #
-    #     # update the json data file
-    #     with open("data.json", "r") as file3:
-    #         data3 = json.load(file3)#Read old data
-    #         data3.update(new_data)#Update old data with new data
-    #     with open("data.json", "w") as file4:
-    #         json.dump(data3, file4, indent=4)#Save updated data
-    #
-    #     web_entry.delete(0, END)
-    #     password_entry.delete(0, END)
-    #     web_entry.focus()
-
     else:
         try:
             #read the old data if data.json exists
@@ -77,20 +55,28 @@ def save_data():
             data.update(new_data)
             #save the updated data
             with open("data.json", "w") as file:
-                json.dump(data, file, indent=4)  # Save updated data
+                json.dump(data, file, indent=4)
+                messagebox.showinfo(title="Saved", message="Saved Successfully.")
         finally:
             web_entry.delete(0, END)
             password_entry.delete(0, END)
             web_entry.focus()
 
 def search_data():
-    with open("data.json", "r") as file:
-        data = json.load(file)
-        website = data["website"]
-        email = data["email"]
-        password = data["password"]
+    website = web_entry.get().title()
+    try:
+        with open("data.json", "r") as file:
+            data = json.load(file)
 
-    messagebox.askokcancel(title=website, message=f"Email: {email}\n Password: {password}")
+    except FileNotFoundError:
+        messagebox.showinfo(title="Error", message="No Data File Found.")
+    else:
+        if website in data:
+            email = data[website]["Email"]
+            password = data[website]["Password"]
+            messagebox.askokcancel(title=website, message=f"Email: {email}\n Password: {password}")
+        else:
+            messagebox.showinfo(title="Error", message=f"No details for {website} exists.")
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 
@@ -124,7 +110,7 @@ password_entry = Entry(width=34)
 password_entry.grid(column=1, row=3)
 
 #buttons
-search_btn = Button(text="Search", font=FONT_NAME, width=16, bg="white")
+search_btn = Button(text="Search", font=FONT_NAME, width=16, bg="white", command=search_data)
 search_btn.grid(column=2, row=1)
 generate_btn = Button(text="Generate Password", font=FONT_NAME, bg="white",command=pass_generator )
 generate_btn.grid(column=2, row=3)
