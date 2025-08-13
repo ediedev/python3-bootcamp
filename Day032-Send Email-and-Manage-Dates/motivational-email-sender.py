@@ -10,7 +10,7 @@ RECEIVER_EMAIL = "<EMAIL>"
 now = dt.datetime.now()
 day_of_week = now.weekday()
 
-if day_of_week == 0:
+if day_of_week == 1:
     with open("quotes.txt", "r") as quotes_file:
         quotes = quotes_file.readlines()
         quote = random.choice(quotes)
