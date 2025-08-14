@@ -19,16 +19,26 @@ Below are the categories;
 12. Namespacing, scope and number guessing game
 13. Debugging
 14. Higher Lower Game
-
-### **2. INTERMEDIATE - **
 15. Local Development Environment Setup & the Coffee Machine
-16. Object Oriented Programming (OOP)
+16. Object-Oriented Programming (OOP)
 17. The Quiz Project & the Benefits of OOP
 18. Turtle & the Graphical User Interface (GUI)
 19. Instances, State and Higher Order Functions
-20. Intermediate_Build_the_Snake_Game_Part_1_Animation_&_Coordinates
-21. Intermediate_Build_the_Snake_Game_Part_2_Inheritance_&list_slicing
-22. Intermediate_Build_Pong_The_Famous_Arcade_Game
-23. Intermediate_The_Turtle_Crossing_Capstone_Project
-24. Intermediate - Files, Directories and Paths
-25. Intermediate_Working_with_CSV_Data_and_the_Pandas_Library
+
+### **2. INTERMEDIATE - **
+20. Build the Snake Game Part 1 Animation & Coordinates
+21. Build the Snake Game Part 2 Inheritance & list slicing
+22. Pong The Famous Arcade Game
+23. The Turtle Crossing Capstone Project
+24. Files, Directories and Paths
+25. Working with CSV Data and the Pandas Library
+26. List Comprehension and the NATO Alphabet
+27. Tkinter, args, kwargs and Creating GUI Programs
+28. Tkinter, Dynamic Typing and the Pomodoro
+29. Building a Password Manager GUI App
+30. Errors, Exceptions and JSON Data Improving
+31. Flash Card App Capstone Project
+
+### **3. INTERMEDIATE + **
+32. Send Email smtplib & Manage Dates datetime
+33. API Endpoints & API Parameters ISS Overhead
