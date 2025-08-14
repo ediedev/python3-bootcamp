@@ -4,7 +4,7 @@ It's based on programming principles for all levels (Beginner, Intermediate, Adv
 It's full of projects to help you fully understand the concept and principles.
 Below are the categories;
 
-### **1. BEGINNER - 14 DAYS**
+### **1. BEGINNER - 19 DAYS**
 1. variables and inputs
 2. Data Types
 3. Conditional Statements
@@ -25,7 +25,7 @@ Below are the categories;
 18. Turtle & the Graphical User Interface (GUI)
 19. Instances, State and Higher Order Functions
 
-### **2. INTERMEDIATE - **
+### **2. INTERMEDIATE - 12 DAYS**
 20. Build the Snake Game Part 1 Animation & Coordinates
 21. Build the Snake Game Part 2 Inheritance & list slicing
 22. Pong The Famous Arcade Game
