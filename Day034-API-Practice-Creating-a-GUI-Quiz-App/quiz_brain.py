@@ -1,26 +1,30 @@
-import random
+import html
+
 class QuizBrain:
-    def __init__(self, question_list):
+    def __init__(self, q_list):
         self.question_number = 0
-        self.question_list  = question_list
         self.score = 0
+        self.question_list  = q_list
+        self.current_question = None
 
     def still_has_question(self):
-        return self.question_number < 10
+        """returns the question number if still in the question list"""
+        return self.question_number < (len(self.question_list))
 
     def next_question(self):
         """Retrieve the item at the current question number.from the question list."""
-        question_num = random.randint(1, len(self.question_list))
-        question = self.question_list[question_num]
+        self.current_question = self.question_list[self.question_number]
         self.question_number += 1
-        user_answer = input(f"Q.{self.question_number}: {question.text} (True/False): ")
-        self.check_answer(user_answer, question.answer)
+        q_text = html.unescape(self.current_question.text)
+        return f"Q.{self.question_number}: {q_text} (True/False): "
+        # user_answer = input(f"Q.{self.question_number}: {q_text} (True/False): ")
+        # self.check_answer(user_answer)
 
-    def check_answer(self, user_answer, correct_answer):
+    def check_answer(self, user_answer):
+        """Checks if the user answered the question correctly."""
+        correct_answer = self.current_question.answer
         if user_answer.lower() == correct_answer.lower():
             self.score += 1
-            print(f"You got it right! {correct_answer}")
+            return True
         else:
-            print("You got it wrong!")
-        print(f"The correct answer: {correct_answer}")
-        print(f"Score : {self.score}/{self.question_number} \n")
+            return False
