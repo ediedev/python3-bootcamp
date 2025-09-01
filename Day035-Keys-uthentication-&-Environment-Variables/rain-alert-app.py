@@ -5,15 +5,14 @@ import os
 # Create environment variable
 os.environ["MY_APPID"] = "78ea50d7b0c4783f2516577959643fff"
 
-# https://www.latlong.net/
-MY_LAT = 0.347596
-MY_LON = 32.582520
-account_sid = "<KEY>"
-auth_token = "<PASSWORD>"
+# latlong.net
+MY_LAT = 45.189505
+MY_LON = 11.604997
+account_sid = "ACcbadacc7f646347edf16696b8d191c3e"
+auth_token = "74661cb0f513955e363cd208f03e9430"
 
-# https://openweathermap.org/
+# openweathermap
 forecast_endpoint = "https://api.openweathermap.org/data/2.5/forecast"
-weather_endpoint = "https://api.openweathermap.org/data/2.5/weather"
 my_appid = os.environ.get("MY_APPID")# Access environment variable
 
 parameters = {
@@ -35,8 +34,8 @@ if will_rain:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         body="Bring an Umbrella",
-        from_="<Twilio generated phone number>",
-        to="+256789914733",
+        from_="+1 909 403 0243",
+        to="+256726777004",
     )
     print(message.sid)
 
