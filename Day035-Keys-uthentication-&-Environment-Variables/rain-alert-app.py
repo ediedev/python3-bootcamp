@@ -4,11 +4,11 @@ import os
 
 # Create environment variable
 os.environ["MY_APPID"] = "78ea50d7b0c4783f2516577959643fff"
-
+os.environ["TWILIO_ACCOUNT_SID"] = "ACcbadacc7f646347edf16696b8d191c3e"
 # latlong.net
 MY_LAT = 45.189505
 MY_LON = 11.604997
-account_sid = "ACcbadacc7f646347edf16696b8d191c3e"
+account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
 auth_token = "74661cb0f513955e363cd208f03e9430"
 
 # openweathermap
