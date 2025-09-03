@@ -17,6 +17,22 @@ response = requests.get(STOCK_END_POINT, params=stock_params)
 data = response.json()["Time Series (Daily)"]
 data_list = [value for key, value in data.items()]
 yesterday_data = data_list[0]
-yesterday_closing_price = yesterday_data["4. close"]
+yesterday_closing_price = float(yesterday_data["4. close"])
+print(yesterday_closing_price)
 
+#Get the day before yesterday's price
+day_before_yesterday_data = data_list[1]
+day_before_yesterday_closing_price = float(day_before_yesterday_data["4. close"])
+print(day_before_yesterday_closing_price)
 
+#find the positive difference in prices
+diffence = abs(yesterday_closing_price - day_before_yesterday_closing_price)
+print(diffence)
+
+#percentage difference
+diff_percent = (diffence / yesterday_closing_price) * 100
+print(diff_percent)
+
+#check if the diffence percentage is greater the 5
+if diff_percent > 5:
+    print("Get News")
